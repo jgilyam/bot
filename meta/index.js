@@ -123,6 +123,7 @@ var server = MetaWebHookServer$1;
 
 const { ProviderClass } = require$$0$1;
 const axios = require("axios");
+const { AxiosError } = require("axios");
 const MetaWebHookServer = server;
 const URL = `https://graph.facebook.com/v15.0`;
 
@@ -202,7 +203,7 @@ class MetaProvider extends ProviderClass {
       console.log(response.data);
       return response.data;
     } catch (error) {
-      console.log(`Error intentando hacer post con axios: ${error}`);
+      console.log(`Error intentando hacer post con axios: ${error.toJSON()}`);
       const promiseError = Promise.resolve(error);
       promiseError
         .then((value) => {
@@ -226,6 +227,7 @@ class MetaProvider extends ProviderClass {
         body: message,
       },
     };
+    console.log(body);
     await this.sendMessageMeta(body);
   };
 
