@@ -141,12 +141,21 @@ class MetaProvider extends ProviderClass {
   metHook;
   jwtToken;
   numberId;
+  apiWhatsappClient;
   constructor({ jwtToken, numberId, verifyToken, port = PORT }) {
     super();
     this.jwtToken = jwtToken;
     this.numberId = numberId;
     this.metHook = new MetaWebHookServer(verifyToken, port);
     this.metHook.start();
+    this.apiWhatsappClient = axios.create({
+      baseURL: `https://graph.facebook.com/v15.0/${this.numberId}`,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        Authorization: `${this.jwtToken}`,
+      },
+    });
     console.log("se crea una instacia de metaprovider");
     const listEvents = this.busEvents();
 
@@ -180,19 +189,11 @@ class MetaProvider extends ProviderClass {
   sendMessageMeta = async (body) => {
     console.log("estoy en sendMessage");
     try {
-      const response = await axios.post(
-        `${URL}/${this.numberId}/messages`,
-        body,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${this.jwtToken}`,
-          },
-        }
-      );
+      console.log("estoy dentro del try");
+      const response = await this.apiWhatsappClient.post(`/messages`, body);
       return response.data;
     } catch (error) {
+      console.log(`Error intentando hacer post con axios: ${error}`);
       return Promise.resolve(error);
     }
   };
