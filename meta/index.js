@@ -122,7 +122,7 @@ let MetaWebHookServer$1 = class MetaWebHookServer extends EventEmitter {
 var server = MetaWebHookServer$1;
 
 const { ProviderClass } = require$$0$1;
-const axios = require$$1$1;
+const axios = require("axios");
 const MetaWebHookServer = server;
 const URL = `https://graph.facebook.com/v15.0`;
 
@@ -156,7 +156,7 @@ class MetaProvider extends ProviderClass {
         Authorization: `${this.jwtToken}`,
       },
     });
-    console.log("se crea una instacia de metaprovider");
+    console.log(`axios: ${this.apiWhatsappClient}`);
     const listEvents = this.busEvents();
 
     for (const { event, func } of listEvents) {
@@ -191,10 +191,25 @@ class MetaProvider extends ProviderClass {
     try {
       console.log("estoy dentro del try");
       const response = await this.apiWhatsappClient.post(`/messages`, body);
+      response
+        .then((value) => {
+          console.log(`value: ${value}`);
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
       return response.data;
     } catch (error) {
       console.log(`Error intentando hacer post con axios: ${error}`);
-      return Promise.resolve(error);
+      const promiseError = Promise.resolve(error);
+      promiseError
+        .then((value) => {
+          console.log(`value: ${value}`);
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
+      return promiseError;
     }
   };
 
