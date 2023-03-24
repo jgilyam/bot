@@ -8,6 +8,10 @@ const {
 const MetaProvider = require("@bot-whatsapp/provider/meta");
 const MongoAdapter = require("@bot-whatsapp/database/mongo");
 
+require("dotenv").config();
+
+
+
 /**
  * Declaramos las conexiones de Mongo
  */
@@ -97,17 +101,16 @@ const flowPrincipal = addKeyword(["hola", "ole", "alo"])
 
 const main = async () => {
   const adapterDB = new MongoAdapter({
-    dbUri: MONGO_DB_URI,
-    dbName: MONGO_DB_NAME,
+    dbUri: process.env.MONGO_DB_URI,
+    dbName: process.env.MONGO_DB_NAME,
   });
 
   const adapterFlow = createFlow([flowPrincipal]);
 
   const adapterProvider = createProvider(MetaProvider, {
-    jwtToken:
-      "EAAHLzXTZBhBABAASjRS1PYZCiOdBSyxQOZB4749AR5UXe9rlckVAb8d9ZBZC3HePmeDcffEO71BiX9GXpZAPHZAsZAinZCU9VoihF7jUAZBFe4KKl4zIOkpMl72m7MMUQ6VIz3epxSEMi5D7niJ0xIQYFbS5efCxUGCCbPExqkr0ohejYTcoIJDCnLJOcWmTOuF2ZCgqshQB26UZAAZDZD",
-    numberId: "102009772748819",
-    verifyToken: "teEscuchamos",
+    jwtToken: process.env.JWT_TOKEN,
+    numberId: process.env.NUMBER_ID,
+    verifyToken: process.env.VERIFY_TOKEN,
   });
 
   createBot({
