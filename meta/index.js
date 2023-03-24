@@ -217,8 +217,8 @@ class MetaProvider extends ProviderClass {
   };
 
   sendtext = async (number, message) => {
-    console.log("estoy en senText");
-    const numberString = toString(number);
+    const numberString = new String(number);
+    console.log(numberString);
     const numberProcessed = numberString.slice(0, 2) + numberString.slice(3);
     console.log(`se responde al numero: ${numberProcessed}`);
     const body = {
