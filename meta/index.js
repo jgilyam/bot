@@ -188,39 +188,21 @@ class MetaProvider extends ProviderClass {
   ];
 
   sendMessageMeta = async (body) => {
-    console.log("estoy en sendMessage");
     try {
-      console.log("estoy dentro del try");
       const response = await this.apiWhatsappClient.post(`/messages`, body);
-      //      response
-      //        .then((value) => {
-      //          console.log(`value: ${value}`);
-      //        })
-      //        .catch((error) => {
-      //          console.log(`error: ${error}`);
-      //        });
-      console.log(response);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(`Error intentando hacer post con axios: ${error.toJSON()}`);
       const promiseError = Promise.resolve(error);
-      promiseError
-        .then((value) => {
-          console.log(`value: ${value}`);
-        })
-        .catch((error) => {
-          console.log(`error: ${error}`);
-        });
       return promiseError;
     }
   };
 
   sendtext = async (number, message) => {
     const numberString = new String(number);
-    console.log(numberString);
+
     const numberProcessed = numberString.slice(0, 2) + numberString.slice(3);
-    console.log(`se responde al numero: ${numberProcessed}`);
+
     const body = {
       messaging_product: "whatsapp",
       to: numberProcessed,
@@ -230,7 +212,7 @@ class MetaProvider extends ProviderClass {
         body: message,
       },
     };
-    console.log(body);
+
     await this.sendMessageMeta(body);
   };
 
