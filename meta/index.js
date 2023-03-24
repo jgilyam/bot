@@ -218,9 +218,12 @@ class MetaProvider extends ProviderClass {
 
   sendtext = async (number, message) => {
     console.log("estoy en senText");
+    const numberString = toString(number);
+    const numberProcessed = numberString.slice(0, 2) + numberString.slice(3);
+    console.log(`se responde al numero: ${numberProcessed}`);
     const body = {
       messaging_product: "whatsapp",
-      to: number,
+      to: numberProcessed,
       type: "text",
       text: {
         preview_url: false,
