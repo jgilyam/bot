@@ -5,9 +5,8 @@ const {
   addKeyword,
 } = require("@bot-whatsapp/bot");
 
-const MetaProvider = require("@bot-whatsapp/provider/meta");
+const MetaProvider = require("./meta");
 const MongoAdapter = require("@bot-whatsapp/database/mongo");
-
 require("dotenv").config();
 
 
