@@ -198,6 +198,8 @@ class MetaProvider extends ProviderClass {
       //        .catch((error) => {
       //          console.log(`error: ${error}`);
       //        });
+      console.log(response);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(`Error intentando hacer post con axios: ${error}`);
