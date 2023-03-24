@@ -153,7 +153,7 @@ class MetaProvider extends ProviderClass {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
-        Authorization: `${this.jwtToken}`,
+        Authorization: `Bearer ${this.jwtToken}`,
       },
     });
     console.log(`axios: ${this.apiWhatsappClient}`);
@@ -191,13 +191,13 @@ class MetaProvider extends ProviderClass {
     try {
       console.log("estoy dentro del try");
       const response = await this.apiWhatsappClient.post(`/messages`, body);
-      response
-        .then((value) => {
-          console.log(`value: ${value}`);
-        })
-        .catch((error) => {
-          console.log(`error: ${error}`);
-        });
+      //      response
+      //        .then((value) => {
+      //          console.log(`value: ${value}`);
+      //        })
+      //        .catch((error) => {
+      //          console.log(`error: ${error}`);
+      //        });
       return response.data;
     } catch (error) {
       console.log(`Error intentando hacer post con axios: ${error}`);
