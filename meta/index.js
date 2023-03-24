@@ -110,7 +110,7 @@ let MetaWebHookServer$1 = class MetaWebHookServer extends EventEmitter {
   start = () => {
     this.metaServer.listen(this.metaPort, () => {
       console.log(``);
-      console.log(`[meta]: Agregar esta url "WHEN A MESSAGE COMES IN"`);
+      console.log(`[meta]: Agregar esta url "Hola Hola"`);
       console.log(`[meta]: POST http://localhost:${this.metaPort}/webhook`);
       console.log(`[meta]: Más información en la documentacion`);
       console.log(``);
@@ -147,7 +147,7 @@ class MetaProvider extends ProviderClass {
     this.numberId = numberId;
     this.metHook = new MetaWebHookServer(verifyToken, port);
     this.metHook.start();
-
+    console.log("se crea una instacia de metaprovider");
     const listEvents = this.busEvents();
 
     for (const { event, func } of listEvents) {
@@ -198,6 +198,7 @@ class MetaProvider extends ProviderClass {
   };
 
   sendtext = async (number, message) => {
+    console.log("estoy en senText");
     const body = {
       messaging_product: "whatsapp",
       to: number,
