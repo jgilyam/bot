@@ -98,13 +98,38 @@ const flowPrincipal = addKeyword(["hola", "ole", "alo"])
     [flowDocs, flowGracias, flowTuto, flowDiscord]
   );
 
+
+
+
+  
+  const flowFormulario = addKeyword(['Hola'])
+  .addAnswer(
+      ['Hola!','Para enviar el formulario necesito unos datos...' ,'Escriba su *Nombre*'],
+      { capture: true },
+
+      async (ctx, flowDynamic) => {
+          nombre = ctx.body
+          return flowDynamic(`Encantado *${nombre}*, continuamos...`)
+      }
+  )
+  .addAnswer(
+    ['También tu edad'],
+    { capture: true },
+
+    async (ctx, flowDynamic) => {
+    edad = ctx.body
+    return flowDynamic(`Perfecto *${nombre}*, por último...`)
+    }
+)
+
+
 const main = async () => {
   const adapterDB = new MongoAdapter({
     dbUri: process.env.MONGO_DB_URI,
     dbName: process.env.MONGO_DB_NAME,
   });
 
-  const adapterFlow = createFlow([flowPrincipal]);
+  const adapterFlow = createFlow([flowFormulario]);
 
   const adapterProvider = createProvider(MetaProvider, {
     jwtToken: process.env.JWT_TOKEN,

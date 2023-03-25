@@ -1,0 +1,101 @@
+[33mcommit fd453688e1870b89e42e574a50a9f884ab68d35e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: RenzoMasiero88 <renzo.masiero.dev@gmail.com>
+Date:   Fri Mar 24 20:12:11 2023 -0300
+
+    prueba formulario 4
+
+[33mcommit c62ef4cb48b52fe03a19a8e6198117705c3427b7[m
+Author: RenzoMasiero88 <renzo.masiero.dev@gmail.com>
+Date:   Fri Mar 24 17:35:45 2023 -0300
+
+    prueba formulario 3
+
+[33mcommit 1055692aa0ddc6ab651d60016abdee9026cf0fab[m
+Author: RenzoMasiero88 <renzo.masiero.dev@gmail.com>
+Date:   Fri Mar 24 17:26:54 2023 -0300
+
+    prueba formulario 2
+
+[33mcommit 34e5ae40ecf20b1e45318e2d7fa615addbc81923[m
+Author: RenzoMasiero88 <renzo.masiero.dev@gmail.com>
+Date:   Fri Mar 24 17:19:05 2023 -0300
+
+    prueba formulario 1
+
+[33mcommit 7570d1ad618acb1ba86d658fc973083b5dcc51e1[m
+Author: RenzoMasiero88 <renzo.masiero.dev@gmail.com>
+Date:   Fri Mar 24 17:03:00 2023 -0300
+
+    prueba formulario
+
+[33mcommit 7b25e6ca14b6ba672d336f8b5c67309255c4caca[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 04:09:55 2023 -0300
+
+    sacando logs
+
+[33mcommit 56847d054a69ef68a982d7aa81ddaac1227d6068[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 04:05:12 2023 -0300
+
+    conviertieno a string
+
+[33mcommit 9d1370c28293c0cc82226967573dfcfd98ef5089[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 03:47:39 2023 -0300
+
+    corregir numero
+
+[33mcommit 60ef3d6789fb562e9f65551ea6c8eb12293ee8b4[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 03:29:46 2023 -0300
+
+    intentando ver el rror
+
+[33mcommit 9b592a5a13df08766ab8d1e783411b9e30e5a21c[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 03:19:02 2023 -0300
+
+    agregando logs
+
+[33mcommit 33ecc4e9ad9bec4e7f434c69303dd33eb85b290d[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 03:13:49 2023 -0300
+
+    agregando bearer
+
+[33mcommit 9b44c75126a6d3b78456559becc11e4547c2a0e3[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 03:02:52 2023 -0300
+
+    se instala axios local
+
+[33mcommit 021d4130b2f0dd92e21a5c0a6f65eff9e0264e57[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 02:48:25 2023 -0300
+
+    retocando meta provider
+
+[33mcommit d102703f6b1583891ef32cde25361bd580675091[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 02:39:37 2023 -0300
+
+    agreagando logs
+
+[33mcommit eafa0cbe740261eb99987c37344b3c47b14fed5d[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 02:28:46 2023 -0300
+
+    probando generar un  provider nuevo
+
+[33mcommit 9dd84688afc235be42ea3b3b5844e8a3d7ee5962[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 01:28:06 2023 -0300
+
+    se agregan env
+
+[33mcommit e7ecce5d0a536cbbdf5b9ee022a19ac7ad8217d2[m
+Author: jgilyam <jgilyam@folcode.com>
+Date:   Fri Mar 24 01:18:47 2023 -0300
+
+    inicio de proyecto
